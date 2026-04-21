@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Hero.css';
-import HeroImg from "../Images/Hero.png";
+import HeroImg from "../Images/Hero.webp";
 
 const STATS = [
   { number: '13+', label: 'Years of Excellence' },
