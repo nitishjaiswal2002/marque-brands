@@ -1,0 +1,54 @@
+/* ── Technologies ── */
+.technologies {
+  padding: 90px 5%;
+  background: var(--off-white);
+}
+
+.technologies__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.technologies__chips {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.technologies__chip {
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: default;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.technologies__chip--orange {
+  background: var(--orange);
+  color: #fff;
+}
+
+.technologies__chip--navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.technologies__chip--white {
+  background: #fff;
+  color: var(--navy);
+  border-color: #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.technologies__chip:hover {
+  background: var(--orange) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(247,162,0,0.3);
+}

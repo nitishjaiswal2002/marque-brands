@@ -1,0 +1,30 @@
+/* ── Ticker ── */
+.ticker {
+  background: #F7A200;
+  overflow: hidden;
+  padding: 14px 0;
+  display: flex;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 48px;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.ticker__item {
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticker__dot {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 18px;
+}

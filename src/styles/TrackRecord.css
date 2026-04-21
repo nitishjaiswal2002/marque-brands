@@ -1,0 +1,77 @@
+/* ── Track Record ── */
+.track-record {
+  padding: 100px 5%;
+  background: linear-gradient(160deg, #1B2A6B 0%, #0d1a45 100%);
+}
+
+.track-record__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.track-record__header .section-title {
+  color: #fff;
+}
+
+.track-record__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.track-record__card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 36px 28px;
+  backdrop-filter: blur(8px);
+  cursor: default;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.track-record__card:hover {
+  background: rgba(247, 162, 0, 0.12);
+  border-color: rgba(247, 162, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+.track-record__stat {
+  font-weight: 900;
+  font-size: 58px;
+  color: #F7A200;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.track-record__sector {
+  font-weight: 700;
+  font-size: 13px;
+  color: #F7A200;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.track-record__detail {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.track-record__extra {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(247, 162, 0, 0.3);
+  border-radius: 18px;
+  padding: 28px 32px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.track-record__extra strong {
+  color: #F7A200;
+}

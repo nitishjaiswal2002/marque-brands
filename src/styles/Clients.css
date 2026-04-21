@@ -1,0 +1,112 @@
+/* ── Clients ── */
+.clients {
+  padding: 100px 5%;
+  background: var(--white);
+}
+
+.clients__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.clients__subtext {
+  text-align: center;
+  color: var(--gray);
+  font-size: 16px;
+  margin-bottom: 52px;
+}
+
+.clients__featured {
+  max-width: 1200px;
+  margin: 0 auto 52px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.clients__featured-badge {
+  background: var(--off-white);
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  cursor: default;
+  transition: all 0.22s ease;
+}
+
+.clients__featured-badge:hover {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.clients__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.clients__category {
+  border-radius: 16px;
+  padding: 24px 28px;
+  border: 1px solid #e5e7eb;
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.clients__category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+}
+
+.clients__category--light {
+  background: var(--off-white);
+}
+
+.clients__category--orange {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.clients__category-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.clients__category--light  .clients__category-label { color: var(--orange); }
+.clients__category--orange .clients__category-label { color: #fff; }
+
+.clients__category-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.clients__category--light  .clients__category-dot { background: var(--orange); }
+.clients__category--orange .clients__category-dot { background: #fff; }
+
+.clients__category-brands {
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.clients__category--light  .clients__category-brands { color: #555; }
+.clients__category--orange .clients__category-brands { color: rgba(255,255,255,0.88); }
+
+@media (max-width: 600px) {
+  .clients__grid { grid-template-columns: 1fr; }
+}
