@@ -67,3 +67,33 @@
   text-align: center;
   line-height: 1.6;
 }
+/* ── Footer Mobile (480px) ── */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 20px 24px; /* Side padding thodi kam kar di */
+  }
+
+  .footer__inner {
+    gap: 24px; /* Logo aur links ke beech gap badhaya */
+  }
+
+  .footer__logo-marque, 
+  .footer__logo-brands {
+    font-size: 20px; /* Logo ka size mobile ke liye thoda chota kiya */
+  }
+
+  .footer__links {
+    gap: 16px 24px; /* Links ke beech horizontal aur vertical gap adjust kiya */
+    max-width: 300px; /* Links ko 2 lines mein wrap karne ke liye width restrict ki */
+  }
+
+  .footer__link {
+    font-size: 12px; /* Text size thoda kam kiya */
+    letter-spacing: 0.2px;
+  }
+
+  .footer__copy {
+    font-size: 11px; /* Copyright text mobile ke liye optimize kiya */
+    padding: 0 10px;
+  }
+}

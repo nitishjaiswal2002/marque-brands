@@ -11,7 +11,6 @@
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
-  scroll-behavior: smooth;
 }
 
 .navbar__inner {
@@ -23,12 +22,14 @@
   justify-content: space-between;
 }
 
+/* ── Logo ── */
 .navbar__logo {
   display: flex;
   align-items: center;
   gap: 2px;
   user-select: none;
   text-decoration: none;
+  z-index: 2000;
 }
 
 .navbar__logo-marque {
@@ -47,6 +48,7 @@
   letter-spacing: -0.5px;
 }
 
+/* ── Desktop Links ── */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -61,7 +63,7 @@
   text-decoration: none;
   letter-spacing: 0.3px;
   transition: color 0.2s ease;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .navbar--scrolled .navbar__link {
@@ -82,10 +84,116 @@
   font-size: 13px;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(247,162,0,0.4);
+  box-shadow: 0 4px 14px rgba(247, 162, 0, 0.4);
 }
 
 .navbar__cta:hover {
   background: #E63946;
-  box-shadow: 0 4px 14px rgba(230,57,70,0.4);
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.4);
+}
+
+/* ── Hamburger Button — desktop pe hidden ── */
+.navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+  padding: 10px;
+  position: relative;
+}
+
+/* ── Hamburger Icon (3 lines) ── */
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.navbar--scrolled .hamburger {
+  background: #333;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: inherit;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after  { bottom: -8px; }   /* FIX: was "bottom: 8px" — should be negative */
+
+/* ── 'X' animation when active ── */
+.hamburger--active {
+  background: transparent !important;
+}
+
+.hamburger--active::before {
+  transform: rotate(45deg);
+  top: 0;
+  background: #fff !important;
+}
+
+.hamburger--active::after {
+  transform: rotate(-45deg);   /* FIX: was rotate(-45) — deg missing */
+  bottom: 0;
+  background: #fff !important;
+}
+
+/* ── Overlay ── */
+.navbar__overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);   /* FIX: was 0.05 — barely visible */
+  z-index: 1200;
+}
+
+/* ── Mobile (max-width: 768px) ── */
+/* FIX: was 420px — too narrow, most phones are 390-430px wide */
+@media (max-width: 768px) {
+
+  .navbar__toggle {
+    display: block;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    right: -100%;             /* slide out to the right */
+    width: 280px;
+    height: 100vh;
+    background: #080d1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1500;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* FIX: was ".nabvar__links--open" — typo in class name */
+  .navbar__links--open {
+    right: 0;
+  }
+
+  .navbar__link {
+    font-size: 18px;
+    color: #fff !important;
+    text-shadow: none;
+  }
+
+  .navbar__cta {
+    margin-top: 8px;
+  }
 }
